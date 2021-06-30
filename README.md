@@ -2,6 +2,10 @@
 
 ### Exchange rate Class
 
+- Exchange class allows object to be created with an initial currency value.
+- `rates` function searches json file `exchange_rates.json` looking for currency in object.
+- If found then it displays the currency, if not then an error message is displayed.
+
 ```python
 import json
 
@@ -28,4 +32,15 @@ class Exchange:
         for key in currencies['rates'].keys():
             print("{} exchange rate is {}".format(key,currencies['rates'][key]))
 
+```
+
+##### Running File
+
+```python
+from app.exchange_rate_paser import Exchange
+
+rate1 = Exchange("GBP")
+rate2 = Exchange("AUD")
+
+rate1.all_rate
 ```
